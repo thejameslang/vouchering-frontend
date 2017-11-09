@@ -1,4 +1,13 @@
 language: node_js
+node_js:
+  - "8"
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm i -g vue-cli
 
 cache:
   directories:
@@ -7,12 +16,13 @@ cache:
 script:
   - npm run build
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
+  deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    on:
+      branch: master
 
 notifications:
-    slack: cbrecode:Sj3O9DRJNMCBit4SGea5WK4I
+  email: false
+  slack: cbrecode:Sj3O9DRJNMCBit4SGea5WK4I
