@@ -9,3 +9,6 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master
+
+notifications:
+    slack: cbrecode:Sj3O9DRJNMCBit4SGea5WK4I
